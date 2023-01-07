@@ -18,6 +18,6 @@ async function bootstrap() {
     include: [ScraperModule],
   });
   SwaggerModule.setup('spec', app, catchUpSwagger);
-  await app.listen(3003);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
