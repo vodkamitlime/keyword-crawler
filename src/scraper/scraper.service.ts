@@ -8,7 +8,7 @@ import * as dayjs from 'dayjs';
 
 import * as utc from 'dayjs/plugin/utc';
 import * as timezone from 'dayjs/plugin/timezone';
-import { NaverViewDTO } from 'src/common/dto/scraper-naver.dto';
+import { NaverViewDTO } from 'src/common/dto/scraper.dto';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
