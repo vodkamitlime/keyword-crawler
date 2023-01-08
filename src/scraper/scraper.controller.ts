@@ -1,6 +1,6 @@
 import { Controller, Get, HttpStatus, Query, Res } from '@nestjs/common';
 import { ScraperService } from './scraper.service';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { NaverViewResDTO } from 'src/common/dto/scraper-naver.dto';
 @Controller('scraper')
