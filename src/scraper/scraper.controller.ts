@@ -19,8 +19,14 @@ export class ScraperController {
   async crawlNaverView(
     @Res() res: Response,
     @Query('keyword') keyword: string,
+    @Query('startDate') startDate: string,
+    @Query('endDate') endDate: string,
   ): Promise<void> {
-    const resCrawlNaverView = await this.scraperService.crawlNaverView(keyword);
+    const resCrawlNaverView = await this.scraperService.crawlNaverView(
+      keyword,
+      startDate,
+      endDate,
+    );
     res.status(HttpStatus.OK).json(resCrawlNaverView);
   }
 

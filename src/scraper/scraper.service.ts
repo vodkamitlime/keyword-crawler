@@ -5,7 +5,6 @@ import { lastValueFrom } from 'rxjs';
 import * as cheerio from 'cheerio';
 import { publisherType } from 'src/common/enum/local.enum';
 import * as dayjs from 'dayjs';
-import * as fs from 'fs';
 
 import * as utc from 'dayjs/plugin/utc';
 import * as timezone from 'dayjs/plugin/timezone';
