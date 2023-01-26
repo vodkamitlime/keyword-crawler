@@ -1,6 +1,6 @@
 import { Controller, Get, HttpStatus, Query, Res } from '@nestjs/common';
 import { ScraperService } from './scraper.service';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { NaverViewResDTO } from 'src/common/dto/scraper-naver.dto';
 @Controller('scraper')
@@ -19,8 +19,14 @@ export class ScraperController {
   async crawlNaverView(
     @Res() res: Response,
     @Query('keyword') keyword: string,
+    @Query('startDate') startDate: string,
+    @Query('endDate') endDate: string,
   ): Promise<void> {
-    const resCrawlNaverView = await this.scraperService.crawlNaverView(keyword);
+    const resCrawlNaverView = await this.scraperService.crawlNaverView(
+      keyword,
+      startDate,
+      endDate,
+    );
     res.status(HttpStatus.OK).json(resCrawlNaverView);
   }
 

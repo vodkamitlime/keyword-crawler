@@ -43,17 +43,16 @@ export class NaverViewDTO {
   '원문 링크': string;
 
   constructor(e) {
-    console.log(e);
     this.발행일 = e?.publishedAt;
     this.발행처 = e?.publisherType === 1 ? '네이버 블로그' : '네이버 카페';
     this.출처명 = e?.publisherName;
     this.제목 = e?.title;
-    this.조회수 = e?.totalViews;
+    this.조회수 = e?.totalViews ?? '-';
     this.댓글수 = e?.totalComments;
-    this['부정 키워드 개수'] = 0;
-    this['부정 키워드'] = '';
-    this.본문 = e?.content;
-    this['원문 링크'] = e?.originalUrl;
+    this['부정 키워드 개수'] = e?.negativeTotal;
+    this['부정 키워드'] = e?.negativeString;
+    this.본문 = e?.content ?? '';
+    this['원문 링크'] = e?.parsedData?.originalUrl;
   }
 }
 
